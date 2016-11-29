@@ -68,6 +68,8 @@ Missing injury type
 select 
 injurytype
 ,infraction
+,studentschoolid
+,incidentid
 from custom.custom_dlincidents_raw
 where injurytype IS NULL 
 and infraction in ('Bullying', 'Fighting', 'Sexual Misconduct or Harrassment', 
