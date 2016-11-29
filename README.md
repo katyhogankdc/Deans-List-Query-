@@ -51,3 +51,11 @@ where infraction IS NULL
 ```
 
 Missing injury type 
+```SQL
+select 
+injurytype
+,infraction
+from custom.custom_dlincidents_raw
+where injurytype IS NULL 
+and infraction in ('Bullying', 'Fighting', 'Sexual Misconduct or Harrassment', 'Theft', 'Threatening Physical Harm', 'Violent Incident (WITH physical injury) (VIOWINJ)')
+```
