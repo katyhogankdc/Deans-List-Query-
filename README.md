@@ -28,6 +28,16 @@ where p.penaltyname = 'OSS'
 
 1 incident with OSS and expulsion - based on Incident ID
 
+```SQL
+select 
+p.penaltyname
+,i.incidentid
+from
+custom.custom_dlincidents_raw i 
+left join custom.custom_dlpenalties_raw p on p.incidentid = i.incidentid
+	 where penaltyname in ('OSS', 'Expulsion')
+```
+
 Referrals more than 30 days old that have not been resolved
 
 Missing infraction
