@@ -41,5 +41,13 @@ left join custom.custom_dlpenalties_raw p on p.incidentid = i.incidentid
 Referrals more than 30 days old that have not been resolved
 
 Missing infraction
+```SQL
+select 
+infraction
+,incidentid
+,studentschoolid
+from custom.custom_dlincidents_raw
+where infraction IS NULL
+```
 
 Missing injury type 
