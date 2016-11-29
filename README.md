@@ -57,5 +57,6 @@ injurytype
 ,infraction
 from custom.custom_dlincidents_raw
 where injurytype IS NULL 
-and infraction in ('Bullying', 'Fighting', 'Sexual Misconduct or Harrassment', 'Theft', 'Threatening Physical Harm', 'Violent Incident (WITH physical injury) (VIOWINJ)')
+and infraction in ('Bullying', 'Fighting', 'Sexual Misconduct or Harrassment', 
+'Theft', 'Threatening Physical Harm', 'Violent Incident (WITH physical injury) (VIOWINJ)')
 ```
