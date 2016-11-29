@@ -1,5 +1,7 @@
 # Deans-List-Query-
 
+Overlapping OSS - either starting on the same day or overlapping dates 
+
 ```SQL
 /* 
 1. overlapping OSS - either starting on the same day or overlapping dates
@@ -27,3 +29,5 @@ inner join(select penaltyname, startdate, incidentid, enddate, studentschoolid
 	and p.enddate = sub.enddate
 where p.penaltyname = 'OSS'
 ```
+
+1 incident with OSS and expulsion - based on Incident ID
