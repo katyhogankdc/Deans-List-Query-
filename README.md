@@ -39,6 +39,19 @@ left join custom.custom_dlpenalties_raw p on p.incidentid = i.incidentid
 ```
 
 Referrals more than 30 days old that have not been resolved
+```SQL
+select 
+i.category
+,i.incidentid
+,i.isreferral
+,i.CreateTS
+,i.CloseTS
+from
+custom.custom_dlincidents_raw i 
+	where isreferral = 'True'
+	and i.CloseTS IS NULL
+	and i.CreateTS < '10-OCT-2016'
+```
 
 Missing infraction
 ```SQL
