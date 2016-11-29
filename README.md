@@ -31,3 +31,9 @@ where p.penaltyname = 'OSS'
 ```
 
 1 incident with OSS and expulsion - based on Incident ID
+
+Referrals more than 30 days old that have not been resolved
+
+Missing infraction
+
+Missing injury type 
