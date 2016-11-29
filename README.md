@@ -30,27 +30,30 @@ where p.penaltyname = 'OSS'
 
 ```SQL
 select 
-p.penaltyname
-,i.incidentid
+i.incidentid
+,i.studentschoolid
+,count(i.incidentid) as numoccurences
 from
 custom.custom_dlincidents_raw i 
 left join custom.custom_dlpenalties_raw p on p.incidentid = i.incidentid
-	 where penaltyname in ('OSS', 'Expulsion')
+     where penaltyname in ('OSS', 'Expulsion')
+	 group by i.incidentid, i.studentschoolid
+	 having (count(i.incidentid) > 1)
 ```
 
 Referrals more than 30 days old that have not been resolved
 ```SQL
 select 
-i.category
-,i.incidentid
-,i.isreferral
-,i.CreateTS
-,i.CloseTS
+category
+,incidentid
+,isreferral
+,CreateTS
+,CloseTS
 from
 custom.custom_dlincidents_raw i 
 	where isreferral = 'True'
-	and i.CloseTS IS NULL
-	and i.CreateTS < '10-OCT-2016'
+	and CloseTS IS NULL
+	and CreateTS < (getdate() -30)
 ```
 
 Missing infraction
