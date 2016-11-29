@@ -3,10 +3,6 @@
 Overlapping OSS - either starting on the same day or overlapping dates 
 
 ```SQL
-/* 
-1. overlapping OSS - either starting on the same day or overlapping dates
-2. 1 incident with OSS and expulsion - based on the incident ID
-*/
 
 select 
 p.penaltyname
